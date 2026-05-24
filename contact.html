@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Keystone Partners</title>
+<meta name="description" content="Keystone Partnersへのお問い合わせ。初回ヒアリングは無料です。経営課題の整理段階からのご相談も歓迎します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Keystone Partners ホーム">
+      <span class="nav-logo-mark">Keystone Partners</span>
+      <span class="nav-logo-sub">Housing Industry Advisors</span>
+    </a>
+    <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="members.html">Members</a>
+      <a href="company.html">Company</a>
+      <a href="contact.html" class="nav-cta nav-current">お問い合わせ</a>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HEAD -->
+<section class="page-head">
+  <div class="page-head-inner">
+    <div class="page-eyebrow reveal">
+      <span class="dot"></span>
+      <span>CONTACT</span>
+    </div>
+    <h1 class="page-title reveal" style="--d:.15s">
+      まずは、お話を<br>
+      <em>聞かせてください。</em>
+    </h1>
+    <p class="page-lead reveal" style="--d:.35s">
+      初回ヒアリング(60〜90分)は無料です。経営課題の整理段階から、具体的なご相談まで、どのような段階でも構いません。ご記入いただいた内容は秘密厳守で取り扱います。
+    </p>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="contact-form-section">
+  <div class="contact-grid">
+
+    <form class="form reveal-on-scroll" onsubmit="event.preventDefault(); alert('送信機能は実装フェーズで接続します。');">
+      <div class="field">
+        <label class="field-label" for="company">会社名<span class="required">*</span></label>
+        <input class="field-input" type="text" id="company" name="company" required autocomplete="organization">
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="name">お名前<span class="required">*</span></label>
+        <input class="field-input" type="text" id="name" name="name" required autocomplete="name">
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="title">役職</label>
+        <input class="field-input" type="text" id="title" name="title" autocomplete="organization-title">
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="email">メールアドレス<span class="required">*</span></label>
+        <input class="field-input" type="email" id="email" name="email" required autocomplete="email">
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="phone">電話番号</label>
+        <input class="field-input" type="tel" id="phone" name="phone" autocomplete="tel">
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="hours">連絡可能な時間帯</label>
+        <select class="field-select" id="hours" name="hours">
+          <option value="">選択してください</option>
+          <option value="anytime">いつでも可</option>
+          <option value="morning">平日午前(9-12時)</option>
+          <option value="afternoon">平日午後(13-17時)</option>
+          <option value="evening">平日夕方以降(17-19時)</option>
+          <option value="weekend">土日</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="message">ご相談内容<span class="required">*</span></label>
+        <textarea class="field-textarea" id="message" name="message" required rows="6" placeholder="現状の経営課題、関心のあるサービス領域、ご相談したい内容など、可能な範囲でお書きください。"></textarea>
+      </div>
+
+      <button class="form-submit" type="submit">
+        <span>送信する</span>
+        <span class="arrow">→</span>
+      </button>
+    </form>
+
+    <aside class="contact-info-block reveal-on-scroll">
+      <p class="contact-info-title">Direct Contact</p>
+
+      <div class="contact-info-row">
+        <div class="contact-info-label">Email</div>
+        <div class="contact-info-value">
+          <span class="placeholder">info@keystone-partners.co.jp(仮)</span>
+        </div>
+      </div>
+
+      <div class="contact-info-row">
+        <div class="contact-info-label">Phone</div>
+        <div class="contact-info-value">
+          <span class="placeholder">XX-XXXX-XXXX(設定予定)</span>
+        </div>
+      </div>
+
+      <div class="contact-info-row">
+        <div class="contact-info-label">Office</div>
+        <div class="contact-info-value">
+          <span class="placeholder">東京都(詳細は確定次第)</span>
+        </div>
+      </div>
+
+      <div class="contact-note">
+        守秘義務契約(NDA)の締結が必要な場合は、お問い合わせ時にその旨ご記入ください。初回打ち合わせはオンライン(Zoom / Google Meet)・対面どちらにも対応します。
+      </div>
+    </aside>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <p class="footer-brand-name">Keystone Partners</p>
+      <p class="footer-brand-tag">住宅会社の経営に、二つの視座を。</p>
+    </div>
+    <div>
+      <p class="footer-col-title">Pages</p>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="members.html">Members</a>
+        <a href="company.html">Company</a>
+      </div>
+    </div>
+    <div>
+      <p class="footer-col-title">Contact</p>
+      <div class="footer-links">
+        <a href="contact.html">お問い合わせ</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Keystone Partners</span>
+    <span>Tokyo, Japan</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
