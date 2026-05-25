@@ -7,7 +7,7 @@
 <meta name="description" content="住宅会社向け経営コンサルティング事務所。経営ボードの視座と現場の実装力。二つを併せ持つ少人数のコンサル事務所、Keystone Partners。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&family=Poppins:wght@800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,8 +16,10 @@
 <nav class="nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo" aria-label="Keystone Partners ホーム">
-      <span class="nav-logo-mark">Keystone Partners</span>
-      <span class="nav-logo-sub">Housing Industry Advisors</span>
+      <span class="nav-logo-text">
+        <span class="nav-logo-mark">Keystone Partners</span>
+        <span class="nav-logo-sub">Housing Industry Advisors</span>
+      </span>
     </a>
     <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -69,7 +71,7 @@
 
   <div class="do-grid">
     <article class="do-card reveal-on-scroll">
-      <div class="do-card-image" style="background-image: url('images/service-strategy.png'); background-color: #2a2620;"></div>
+      <div class="do-card-image" style="background-image: url('images/service-strategy.jpg'); background-color: #2D2A26;"></div>
       <div class="do-card-inner">
         <div class="do-card-num">01</div>
         <div class="do-card-title-en">Strategy</div>
@@ -81,7 +83,7 @@
     </article>
 
     <article class="do-card reveal-on-scroll">
-      <div class="do-card-image" style="background-image: url('images/service-sales.png'); background-color: #2a2620;"></div>
+      <div class="do-card-image" style="background-image: url('images/service-sales.jpg'); background-color: #2D2A26;"></div>
       <div class="do-card-inner">
         <div class="do-card-num">02</div>
         <div class="do-card-title-en">Sales &amp; Marketing</div>
@@ -93,7 +95,7 @@
     </article>
 
     <article class="do-card reveal-on-scroll">
-      <div class="do-card-image" style="background-image: url('images/service-dx.jpg'); background-color: #2a2620;"></div>
+      <div class="do-card-image" style="background-image: url('images/service-dx.jpg'); background-color: #2D2A26;"></div>
       <div class="do-card-inner">
         <div class="do-card-num">03</div>
         <div class="do-card-title-en">DX &amp; Implementation</div>
@@ -235,7 +237,7 @@
 
   <div class="members-teaser-grid">
     <article class="member-card reveal-on-scroll">
-      <div class="member-photo-placeholder" style="background-image: url('images/member-yamabuki.png');"></div>
+      <div class="member-photo-placeholder text-fallback" style="background-image: url('images/member-yamabuki.jpg');">KY</div>
       <div class="member-role">Co-founder</div>
       <h3 class="member-name">
         山吹 恭一郎
@@ -251,7 +253,7 @@
     </article>
 
     <article class="member-card reveal-on-scroll">
-      <div class="member-photo-placeholder" style="background-image: url('images/member-kawazoe.png');"></div>
+      <div class="member-photo-placeholder text-fallback" style="background-image: url('images/member-kawazoe.jpg');">SK</div>
       <div class="member-role">Co-founder</div>
       <h3 class="member-name">
         川添 正二郎
@@ -294,6 +296,7 @@
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-brand">
+      <div class="footer-brand-logo" aria-hidden="true"></div>
       <p class="footer-brand-name">Keystone Partners</p>
       <p class="footer-brand-tag">住宅会社の経営に、二つの視座を。</p>
     </div>

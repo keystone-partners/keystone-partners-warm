@@ -11,7 +11,7 @@
 }
 
 :root {
-  /* Colors — inherit from personal site */
+  /* Colors — aligned with the K/S logo (kon-iro navy → seiji celadon) */
   --black: #0A0A0A;
   --black-soft: #1A1A1A;
   --gray-900: #2D2D2D;
@@ -22,14 +22,27 @@
   --gray-100: #F2F2F2;
   --gray-50: #FAFAFA;
   --white: #FFFFFF;
-  --accent: #E36414;
-  --accent-pale: #FCE8D9;
-  --ink: #1A1A1A;
+
+  /* Brand palette — warm neutral edition (Aman Tokyo inspired).
+     Variable names retained from the cool edition for code-wide compatibility;
+     values are remapped to a smoked-sumi / walnut / aged-washi palette.
+     The KSP logo (navy × celadon) remains unchanged and reads as a quiet,
+     considered accent against the warm beige ground. */
+  --navy: #2D2A26;       /* 墨色 (smoked sumi) — primary deep tone for ink & footer */
+  --navy-mid: #3A2E26;   /* 深焙茶 (deep roasted brown) — mid tone */
+  --celadon: #6E5B43;    /* 胡桃色 (walnut) — secondary tone, em & accents */
+  --celadon-pale: #E8DFCE;  /* 老香色 (aged washi) — pale ground */
+  --accent: #6E5B43;     /* main accent: walnut — corporate sub-color paired with sumi */
+  --accent-strong: #8B7B4A; /* 真鍮 (tea-stained brass) — buttons / CTAs */
+  --accent-pale: #E8DFCE; /* aged washi */
+  --ink: #2D2A26;        /* body ink: smoked sumi (warmer than neutral black) */
+  --washi: #F3EEE7;      /* page ground: warm cream paper (Aman Tokyo beige) */
 
   /* Typography */
   --font-display: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif;
   --font-serif: "Hiragino Mincho ProN", "Yu Mincho", "MS Mincho", "Instrument Serif", serif;
   --font-mono: "JetBrains Mono", "SF Mono", monospace;
+  --font-brand: "Poppins", "Noto Sans JP", sans-serif;  /* matches the wordmark in the K/S logo image */
 
   /* Spacing scale (more generous than personal site) */
   --space-xs: 0.5rem;
@@ -49,7 +62,7 @@ body {
   font-family: var(--font-display);
   font-weight: 400;
   color: var(--ink);
-  background: var(--white);
+  background: var(--washi);
   line-height: 1.8;
   font-feature-settings: "palt" 1;
   letter-spacing: 0.02em;
@@ -128,24 +141,59 @@ em {
 
 .nav-logo {
   display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  line-height: 1;
+}
+
+/* The K/S monogram image */
+.nav-logo::before {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 38px;
+  background-image: url('images/logo-mark.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+  flex-shrink: 0;
+}
+
+.nav-logo-text {
+  display: flex;
   flex-direction: column;
   gap: 0.1rem;
   line-height: 1.1;
 }
 
 .nav-logo-mark {
-  font-weight: 900;
-  font-size: 1.05rem;
-  letter-spacing: 0.04em;
+  font-family: var(--font-brand);
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  color: var(--navy);
 }
 
 .nav-logo-sub {
   font-family: var(--font-mono);
-  font-size: 0.62rem;
+  font-size: 0.6rem;
   font-weight: 500;
   letter-spacing: 0.18em;
   color: var(--gray-500);
   text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .nav-logo::before {
+    width: 43px;
+    height: 32px;
+  }
+  .nav-logo-mark {
+    font-size: 0.9rem;
+  }
+  .nav-logo-sub {
+    font-size: 0.55rem;
+  }
 }
 
 .nav-links {
@@ -182,7 +230,7 @@ em {
 }
 
 .nav-cta:hover {
-  background: var(--accent);
+  background: var(--accent-strong);
   opacity: 1 !important;
 }
 
@@ -306,7 +354,8 @@ em {
   z-index: 0;
 }
 
-/* Gradient overlay for text legibility */
+/* Gradient overlay for text legibility — softened and slightly de-saturated
+   so the hero image's natural color variations can breathe through */
 .hero-image::after {
   content: "";
   position: absolute;
@@ -314,17 +363,17 @@ em {
   background:
     linear-gradient(
       to right,
-      rgba(10, 10, 10, 0.78) 0%,
-      rgba(10, 10, 10, 0.5) 38%,
-      rgba(10, 10, 10, 0.18) 65%,
-      rgba(10, 10, 10, 0.05) 100%
+      rgba(45, 42, 38, 0.55) 0%,
+      rgba(45, 42, 38, 0.32) 38%,
+      rgba(45, 42, 38, 0.10) 65%,
+      rgba(45, 42, 38, 0.01) 100%
     ),
     linear-gradient(
       to bottom,
-      rgba(10, 10, 10, 0.35) 0%,
-      rgba(10, 10, 10, 0.1) 25%,
-      rgba(10, 10, 10, 0.1) 70%,
-      rgba(10, 10, 10, 0.55) 100%
+      rgba(45, 42, 38, 0.18) 0%,
+      rgba(45, 42, 38, 0.04) 25%,
+      rgba(45, 42, 38, 0.04) 70%,
+      rgba(45, 42, 38, 0.32) 100%
     );
 }
 
@@ -355,9 +404,9 @@ em {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--accent);
+  background: var(--celadon);
   animation: pulse 2.4s ease-in-out infinite;
-  box-shadow: 0 0 0 4px rgba(227, 100, 20, 0.15);
+  box-shadow: 0 0 0 4px rgba(110, 91, 67, 0.22);
 }
 
 @keyframes pulse {
@@ -394,11 +443,15 @@ em {
   text-shadow: 0 1px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* Hero内のem は暗い背景上で見やすいオレンジアクセントに */
+/* Hero 内の em は、walnut(ロゴ色とは別の暖色アクセント)との同色被りを避けつつ
+   控えめな差別化を出すため、ほぼ白の暖色中性色に、薄い walnut グロー(影)を添える */
 .hero-sub em,
 .hero-headline em {
-  color: var(--accent);
-  text-shadow: 0 1px 20px rgba(0, 0, 0, 0.4);
+  color: #f0ebe3;  /* warm off-white */
+  text-shadow:
+    0 0 24px rgba(110, 91, 67, 0.45),  /* soft walnut glow */
+    0 1px 20px rgba(0, 0, 0, 0.4);
+  font-weight: 700;
 }
 
 .hero-meta {
@@ -719,7 +772,8 @@ section {
 }
 
 .cta-headline em {
-  color: var(--accent);
+  color: #a8c5c0;
+  text-shadow: 0 1px 16px rgba(45, 42, 38, 0.5);
 }
 
 .cta-lead {
@@ -745,7 +799,7 @@ section {
 }
 
 .cta-button:hover {
-  background: var(--accent);
+  background: var(--accent-strong);
   color: var(--white) !important;
   opacity: 1 !important;
   transform: translateY(-2px);
@@ -777,8 +831,20 @@ section {
   gap: 3rem;
 }
 
+.footer-brand-logo {
+  width: 59px;
+  height: 44px;
+  background-image: url('images/logo-mark-light.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+  margin-bottom: 1rem;
+  opacity: 0.92;
+}
+
 .footer-brand-name {
-  font-size: 1.2rem;
+  font-family: var(--font-brand);
+  font-size: 1.15rem;
   font-weight: 800;
   color: var(--white);
   margin-bottom: 0.6rem;
@@ -1467,7 +1533,7 @@ section {
 }
 
 .form-submit:hover {
-  background: var(--accent);
+  background: var(--accent-strong);
   transform: translateY(-2px);
 }
 
@@ -1626,6 +1692,13 @@ section {
   max-width: 50ch;
 }
 
+/* 出典・補注など、本文中の小さな付帯情報 */
+.about-story-text small {
+  font-size: 0.78rem;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
 @media (max-width: 880px) {
   .about-story-split { grid-template-columns: 1fr; gap: 3rem; }
   .about-story-image { aspect-ratio: 16 / 10; }
@@ -1643,9 +1716,8 @@ section {
   inset: 0;
   background-size: cover;
   background-position: center;
-  opacity: 0.35;
+  opacity: 0.9;
   z-index: 0;
-  filter: grayscale(0.4) contrast(1.05);
 }
 
 .cta-image::after {
@@ -1654,13 +1726,13 @@ section {
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(10, 10, 10, 0.4) 0%,
-    rgba(10, 10, 10, 0.6) 100%
+    rgba(45, 42, 38, 0.4) 0%,
+    rgba(45, 42, 38, 0.6) 100%
   );
 }
 
 .cta > .container-narrow,
-.cta > * {
+.cta > *:not(.cta-image) {
   position: relative;
   z-index: 1;
 }
@@ -1725,7 +1797,7 @@ section {
   border-radius: 0;
   margin: -3rem -2.5rem 1.5rem;
   background-size: cover;
-  background-position: center top;
+  background-position: center 20%;
   background-color: var(--gray-200);
   display: block;
   font-size: 0;
@@ -1739,6 +1811,12 @@ section {
   font-style: italic;
   font-size: 1.8rem;
   color: var(--gray-500);
+}
+
+/* When a background image is actually set on the placeholder, suppress the
+   fallback text overlay so the image alone reads cleanly. */
+.member-photo-placeholder.text-fallback[style*="background-image"] {
+  font-size: 0;
 }
 
 .member-card {
@@ -1780,7 +1858,7 @@ section {
 
 /* Selection */
 ::selection {
-  background: var(--accent);
+  background: var(--accent-strong);
   color: var(--white);
 }
 
